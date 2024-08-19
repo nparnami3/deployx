@@ -65,8 +65,11 @@
             <li>Create a new branch for your feature or bugfix.</li>
             <li>Submit a pull request with a clear description of your changes.</li>
         </ol>
-            </p>![Screenshot 2024-08-19 181006](https://github.com/user-attachments/assets/f420c34b-32f7-49d9-b31a-2c74ae564b76)
+           <p>📄 This project is developed by<strong> NISHTHA PARNAMI </strong></h2></p>
+           </p>
+           
 
-    </div>
+
+</div>
 </body>
 </html>

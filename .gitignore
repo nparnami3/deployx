@@ -1,5 +1,7 @@
 /server/upload-service/node_modules
 /server/deploy-service/node_modules
 /server/request-handler/node_modules
+server/upload-service/dist/output/*
+
 client/node_modules
 .ENV

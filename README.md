@@ -1,13 +1,16 @@
 
-![Screenshot 2024-08-19 202121](https://github.com/user-attachments/assets/d5f9e8d9-81fe-47bb-85a9-4a2a5f7eb190)
-<!DOCTYPE html>
-<html lang="en">
-<head> </head>
-<body>
-    <div class="container">
-        <h1>🚀 DeployX</h1>
-      <p><strong>DeployX</strong> is a cutting-edge deployment platform inspired by <a href="https://vercel.com/" target="_blank">Vercel</a>, designed to streamline React app launches. Connect seamlessly with GitHub, push your code, and go live with a click. This project highlights my skill in creating impactful, innovative solutions that boost development efficiency and drive success.</p>
 
+
+<p>
+    <h1>🚀 DeployX</h1>
+      
+      
+<b>DeployX</b> is a cutting-edge deployment platform inspired by <a href="https://vercel.com/" target="_blank">Vercel</a>, designed to streamline React app launches. Connect seamlessly with GitHub, push your code, and go live with a click. This project highlights my skill in creating impactful, innovative solutions that boost development efficiency and drive success.
+</p>
+<p> <h2>⚙️Output</h2> </p>
+
+![Screenshot 2024-08-19 202121](https://github.com/user-attachments/assets/d5f9e8d9-81fe-47bb-85a9-4a2a5f7eb190)
+ 
  <p>
         <h2>🌟 Key Highlights</h2>
         <ul>
@@ -19,7 +22,7 @@
         </ul> 
         </p>
 <p>
-    ![Screenshot 2024-08-19 181006](https://github.com/user-attachments/assets/39e9c5d7-4493-4b0b-9e81-11685973e1c2)
+
 
    <h2>🛠️ Tech Stack</h2>
         <div class="tech-stack" align="center">
@@ -75,6 +78,4 @@
 
 
 </div>
-</body>
-</html>
 

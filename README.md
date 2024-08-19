@@ -17,6 +17,8 @@
         </ul> 
         </p>
 <p>
+    ![Screenshot 2024-08-19 181006](https://github.com/user-attachments/assets/39e9c5d7-4493-4b0b-9e81-11685973e1c2)
+![Screenshot 2024-08-19 181128](https://github.com/user-attachments/assets/e1d022fd-1e97-4c5f-aba8-adc46a53b4ae)
    <h2>🛠️ Tech Stack</h2>
         <div class="tech-stack" align="center">
             <a href="https://www.typescriptlang.org/" target="_blank">

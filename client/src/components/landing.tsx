@@ -42,7 +42,7 @@ export function Landing() {
           </h1>
         </div>
         <a 
-          href="https://github.com/your-repo" 
+          href="https://github.com/nparnami3/deployx" 
           target="_blank" 
           rel="noopener noreferrer"
           className="p-2 rounded hover:bg-gray-700 transition-colors"

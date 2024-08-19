@@ -4,8 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import axios from "axios";
-import "@fontsource/new-rocker"; // Decorative font for heading
-import "@fontsource/overpass"; // Sans-serif font for other text
+import { FaGithub } from "react-icons/fa"; // GitHub icon
+import logo from '@/assets/logo.png'; // Path to your logo image
+import heroImage from '@/assets/hero-image.png'; // Path to your hero image
 
 const BACKEND_UPLOAD_URL = "http://localhost:3000";
 
@@ -16,80 +17,165 @@ export function Landing() {
   const [deployed, setDeployed] = useState(false);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4" style={{ backgroundColor: "#D8125B" }}>
-      <h1 className="text-white text-7xl mb-8" style={{ fontFamily: "'New Rocker', cursive", textAlign: 'center' }}>
-        DEPLOYX
-      </h1>
+    <main 
+      className="flex flex-col items-center  min-h-screen py-3 px-4"
+      style={{ 
+        background: `linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(67,67,67,0.8)), url(${heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: "#FFFFFF",
+        textAlign: 'center'
+      }}
+    >
+      <div className="w-full max-w py-4 px-4 flex justify-between items-center">
+        <div className="flex items-center space-x-4">
+          <img 
+            src={logo} 
+            alt="DeployX Logo" 
+            className="w-16 h-10 rounded-full" // Logo with round shape
+          />
+          <h1 
+            className="text-white text-4xl font-bold"
+            style={{ fontFamily: "'Overpass', sans-serif" }}
+          >
+            DEPLOYX
+          </h1>
+        </div>
+        <a 
+          href="https://github.com/your-repo" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="p-2 rounded hover:bg-gray-700 transition-colors"
+        >
+          <FaGithub size={32} color="#FFFFFF" />
+        </a>
+      </div>
 
-      <Card className="w-full max-w-md" style={{ backgroundColor: "#2C2E39", borderRadius: "10px", padding: "20px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}>
-        <CardHeader>
-          <CardTitle className="text-2xl" style={{ color: "#FFFFFF", fontFamily: "'Overpass', sans-serif" }}>Deploy your GitHub Repository</CardTitle>
-          <CardDescription style={{ color: "#C0C0C0" }}>Enter the URL of your GitHub repository to deploy it</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="github-url" style={{ color: "#FFFFFF" }}>GitHub Repository URL</Label>
-              <Input 
-                onChange={(e) => {
-                  setRepoUrl(e.target.value);
-                }} 
-                placeholder="https://github.com/username/repo" 
-                style={{ backgroundColor: "#3A3B45", color: "#FFFFFF", borderColor: "#555770" }}
-              />
-            </div>
-            <Button 
-              onClick={async () => {
-                setUploading(true);
-                const res = await axios.post(`${BACKEND_UPLOAD_URL}/deploy`, {
-                  repoUrl: repoUrl
-                });
-                setUploadId(res.data.id);
-                setUploading(false);
-                const interval = setInterval(async () => {
-                  const response = await axios.get(`${BACKEND_UPLOAD_URL}/status?id=${res.data.id}`);
-
-                  if (response.data.status === "deployed") {
-                    clearInterval(interval);
-                    setDeployed(true);
-                  }
-                }, 3000)
-              }} 
-              disabled={uploadId !== "" || uploading} 
-              className="w-full text-white" 
-              type="submit"
-              style={{ backgroundColor: "#D8125B", color: "#FFFFF" }}
+      <div className="w-full max-w-4xl py-16 px-4">
+        <Card 
+          className="w-full max-w-md mx-auto"
+          style={{ 
+            backgroundColor: "#2C2E39", // Dark grey background
+            borderRadius: "10px", 
+            padding: "20px", 
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            marginBottom: '20px'
+          }}
+        >
+          <CardHeader>
+            <CardTitle 
+              className="text-2xl font-semibold" 
+              style={{ color: "#FFFFFF", fontFamily: "'Overpass', sans-serif" }} // White text
             >
-              {uploadId ? `Deploying (${uploadId})` : uploading ? "Uploading..." : "Upload"}
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+              Deploy your GitHub Repository
+            </CardTitle>
+            <CardDescription style={{ color: "#C0C0C0" }}> 
+              Enter the URL of your GitHub repository to deploy it
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="space-y-3">
+                <Label htmlFor="github-url" className="text-xl" style={{ color: "#FFFFFF" }}> 
+                  GitHub Repository URL
+                </Label>
+                <Input 
+                  onChange={(e) => setRepoUrl(e.target.value)} 
+                  placeholder="https://github.com/username/repo" 
+                  style={{ 
+                    backgroundColor: "#555770", // Grey input background
+                    color: "#FFFFFF", // White text in input
+                    borderColor: "#AAAAAA" // Light grey border
+                  }}
+                />
+              </div>
+              <Button 
+                onClick={async () => {
+                  setUploading(true);
+                  const res = await axios.post(`${BACKEND_UPLOAD_URL}/deploy`, {
+                    repoUrl: repoUrl
+                  });
+                  setUploadId(res.data.id);
+                  setUploading(false);
+                  const interval = setInterval(async () => {
+                    const response = await axios.get(`${BACKEND_UPLOAD_URL}/status?id=${res.data.id}`);
 
-      {deployed && <Card className="w-full max-w-md mt-8" style={{ backgroundColor: "#2C2E39", borderRadius: "10px", padding: "20px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)" }}>
-        <CardHeader>
-          <CardTitle className="text-xl" style={{ color: "#FFFFFF", fontFamily: "'Overpass', sans-serif" }}>Deployment Status</CardTitle>
-          <CardDescription style={{ color: "#C0C0C0" }}>Your website is successfully deployed!</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-2">
-            <Label htmlFor="deployed-url" style={{ color: "#FFFFFF" }}>Deployed URL</Label>
-            <Input 
-              id="deployed-url" 
-              readOnly 
-              type="url" 
-              value={`http://${uploadId}.dev.deployx.com:3001/index.html`} 
-              style={{ backgroundColor: "#3A3B45", color: "#FFFFFF", borderColor: "#555770" }} 
-            />
-          </div>
-          <br />
-          <Button className="w-full" variant="outline" style={{ backgroundColor: "#FFFFF", color: "#D8125B" }}>
-            <a href={`http://${uploadId}.deployx.com/index.html`} target="_blank">
-              Visit Website
-            </a>
-          </Button>
-        </CardContent>
-      </Card>}
+                    if (response.data.status === "deployed") {
+                      clearInterval(interval);
+                      setDeployed(true);
+                    }
+                  }, 3000)
+                }} 
+                disabled={uploadId !== "" || uploading} 
+                className="w-full" 
+                type="submit"
+                style={{ 
+                  backgroundColor: "#FFA500", // Orange button
+                  color: "#000000", // Black button text
+                  fontWeight: 'bold'
+                }}
+              >
+                {uploadId ? `Deploying (${uploadId})` : uploading ? "Uploading..." : "Upload"}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {deployed && 
+          <Card 
+            className="w-full max-w-md mx-auto"
+            style={{ 
+              backgroundColor: "#2C2E39", // Dark grey background
+              borderRadius: "10px", 
+              padding: "20px", 
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)"
+            }}
+          >
+            <CardHeader>
+              <CardTitle 
+                className="text-xl font-semibold" 
+                style={{ color: "#FFFFFF", fontFamily: "'Overpass', sans-serif" }} // White text
+              >
+                Deployment Status
+              </CardTitle>
+              <CardDescription style={{ color: "#C0C0C0" }}> 
+                Your website is successfully deployed!
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                <Label htmlFor="deployed-url" style={{ color: "#FFFFFF" }}> 
+                  Deployed URL
+                </Label>
+                <Input 
+                  id="deployed-url" 
+                  readOnly 
+                  type="url" 
+                  value={`http://${uploadId}.dev.deployx.com:3001/index.html`} 
+                  style={{ 
+                    backgroundColor: "#555770", // Grey input background
+                    color: "#FFFFFF", // White text in input
+                    borderColor: "#AAAAAA" // Light grey border
+                  }} 
+                />
+              </div>
+              <br />
+              <Button 
+                className="w-full" 
+                variant="outline" 
+                style={{ 
+                  backgroundColor: "#FFA500", // Orange button
+                  color: "#000000" // Black button text
+                }}
+              >
+                <a href={`http://${uploadId}.deployx.com/index.html`} target="_blank" style={{ color: "#000000" }}>
+                  Visit Website
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        }
+      </div>
     </main>
   );
 }

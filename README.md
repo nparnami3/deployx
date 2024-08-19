@@ -9,7 +9,7 @@
 </p>
 <p> <h2>⚙️Output</h2> </p>
 
-![Screenshot 2024-08-19 202121](https://github.com/user-attachments/assets/d5f9e8d9-81fe-47bb-85a9-4a2a5f7eb190)
+![Screenshot 2024-08-20 002847](https://github.com/user-attachments/assets/9d06ff42-7af3-48e9-95cf-443f338ec0f0)
  
  <p>
         <h2>🌟 Key Highlights</h2>

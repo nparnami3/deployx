@@ -2,10 +2,10 @@
 
 
 <p>
-    <h1>🚀 DeployX</h1>
+    <h1>🚀 DeployX</h1> <h3> LIVE LINK !! 👉 <a href="https://deployx-six.vercel.app/"> DeployX</a> </h3>
       
       
-<b>DeployX</b> is a cutting-edge deployment platform inspired by <a href="https://vercel.com/" target="_blank">Vercel</a>, designed to streamline React app launches. Connect seamlessly with GitHub, push your code, and go live with a click. This project highlights my skill in creating impactful, innovative solutions that boost development efficiency and drive success.
+<b>DeployX</b> is a cutting-edge deployment platform inspired by <a href="https://vercel.com/" target="_blank">Vercel</a>, designed to streamline React app launches. Connect seamlessly with GitHub, push your code, and go live with a click. This project highlights my skill in creating impactful, innovative solutions that boost development efficiency and drive success. 
 </p>
 <p> <h2>⚙️Output</h2> </p>
 

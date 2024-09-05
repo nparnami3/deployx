@@ -2,17 +2,17 @@
 
 
 <p>
-    <h1>🚀 DeployX</h1> <h3> LIVE LINK !! 👉 <a href="https://deployx-six.vercel.app/"> DeployX</a> </h3>
+    <h1> DeployX</h1> <h3> LIVE LINK !! 👉 <a href="https://deployx-six.vercel.app/"> DeployX</a> </h3>
       
       
 <b>DeployX</b> is a cutting-edge deployment platform inspired by <a href="https://vercel.com/" target="_blank">Vercel</a>, designed to streamline React app launches. Connect seamlessly with GitHub, push your code, and go live with a click. This project highlights my skill in creating impactful, innovative solutions that boost development efficiency and drive success. 
 </p>
-<p> <h2>⚙️Output</h2> </p>
+<p> <h2>Output</h2> </p>
 
 ![Screenshot 2024-08-20 002847](https://github.com/user-attachments/assets/9d06ff42-7af3-48e9-95cf-443f338ec0f0)
  
  <p>
-        <h2>🌟 Key Highlights</h2>
+        <h2> Key Highlights</h2>
         <ul>
             <li><strong>Instant Deployment:</strong> Deploy your React apps from GitHub to a global server network within minutes.</li>
             <li><strong>Custom Routing & DNS:</strong> Leverage Cloudflare’s powerful routing and DNS management to ensure your application is always accessible, secure, and fast.</li>
@@ -24,7 +24,7 @@
 <p>
 
 
-   <h2>🛠️ Tech Stack</h2>
+   <h2> Tech Stack</h2>
         <div class="tech-stack" align="center">
             <a href="https://www.typescriptlang.org/" target="_blank">
                 <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -51,7 +51,7 @@
                 <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
             </a>
         </div>
-      <h2>🎯 Why DeployX Stands Out</h2>
+      <h2> Why DeployX Stands Out</h2>
 <ul>
     <li><strong>Local Deployment Efficiency:</strong> DeployX facilitates local deployments with setup times averaging under<b> 5-10 minutes</b>, streamlining the development workflow.</li>
     <li><strong>Fast Builds:</strong> Build times up to <b>5x</b> faster compared to traditional tools, significantly reducing wait times during development.</li>
@@ -65,7 +65,7 @@
        
 </p>
 <p>
-        <h2>🤝 Contributing</h2>
+        <h2> Contributing</h2>
         <p>I welcome contributions to DeployX! To contribute:</p>
         <ol>
             <li>Fork the repository.</li>
